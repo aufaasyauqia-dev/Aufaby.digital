@@ -222,7 +222,7 @@ Object.values(S.att).sort((a,b)=>a.d.localeCompare(b.d)).forEach(a=>{const s=fin
 const b=new Blob(['\ufeff'+r.map(x=>x.map(c=>'"'+String(c??'').replace(/"/g,'""')+'"').join(',')).join('\n')],{type:'text/csv'});
 const l=document.createElement('a');l.href=URL.createObjectURL(b);l.download='rekap-absensi-aufaby.csv';l.click()}
 
-/* ===== Portal wali ===== */
+/* ===== Portal wali ===== */ 
 function foto(k,w){const a=S.att[k];const p=w==='in'?a.pin:a.pout;
 modal(`<h3>Foto ${w==='in'?'datang':'pulang'} · ${hm(w==='in'?a.in:a.out)}</h3>`+(p?`<img src="${p}" alt="Foto absensi">`:`<p>Foto absensi otomatis dihapus setelah ${FOTO_HARI} hari demi menjaga privasi &amp; ruang penyimpanan.</p>`))}
 function waliV(){const s=find(ses.id);if(!s){out();return ''}
